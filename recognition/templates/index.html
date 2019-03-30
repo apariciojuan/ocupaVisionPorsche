@@ -1,0 +1,18 @@
+{% load static %}
+<h1>
+  RECOGNITION
+</h1>
+{% if data %}
+
+  <h3>{{ data.0 }}</h3>
+  <h4>{{ data.1 }}</h4>
+  <h4>{{ data.2 }}</h4>
+  <img src="{% static 'result.jpg' %}" alt="" width="400" height="400">
+{% endif %}
+<br>
+Seleccione una imagen para evaluar:
+<form class="" action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.foto }}
+<button type="submit">Enviar</button>
+</form>
